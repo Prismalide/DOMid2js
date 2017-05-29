@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DOMid2js demo defaut</title>
+	<meta name="description" content="Use defaut DOM by id to javascript" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="prismalide.com" />
+
+    <meta name="robots" content="noindex" />
+
+    <script src="../../DOMid2js.js" > </script>
+
+    <style type="text/css">
+/* prefix/suffixe di2j => DOMid2js demo variables */
+    html { height: 100%;}
+    body { height: 100%;
+        background-color: white;
+/*        background-image: radial-gradient(circle at top, lavender,white,white,lavender,#0d8aaa,#4d4aea);
+        background-image: radial-gradient(circle at top, lavender,white,white,lavender,#0d8aaa,blue);
+*/        background-image: radial-gradient(circle at top, #0d8aaa,lavender,white,lavender,#0d8aaa,blue);
+        }
+    .di2jView pre { margin:0px; font-family: Arial;
+/*        color: #0D1815;
+*/        }
+    .di2jNoMP {margin: 0px !important; padding: 0px  !important }
+    .di2jMP {margin: 10px; padding: 10px }
+    .di2jView { display: none;
+        border-left: 5px  solid #D7620A;
+        border-right: 5px  solid #D7620A;
+        background-color: cornsilk;
+        font-family: Arial; 
+/*        color: #0D1815;
+*/        }
+    .di2jCPM3 { padding: 3px; margin: 3px; cursor: default;}
+    .tabLogo, #menudi2j, #di2jInfo, .di2jView {
+        -moz-border-top-radius: 10px; -webkit-border-top-radius: 10px;
+        border-top-left-radius: 10px; border-top-right-radius: 12px;
+        }
+    #di2j { text-align: center; }
+    #di2jframes { height: 100%; min-width: 60%; display: inline-block; text-align: left; }
+    #di2jPreAbout { padding:6px;
+        margin-left: 6px;
+        border-left: 3px  solid #D7620A;
+        }
+    .di2jView iframe { border: 0px }
+    .di2jLink, #di2jExecDemo {
+        font-size: 14px; font-family: Arial;
+        background-color: #F7D672;
+        padding: 3px; padding-left: 10px; padding-right: 10px;
+        margin: 5px;
+        border:  2px  solid #D7620A;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        }
+    .textLogo, .tabLogo, #menudi2jLogo {
+        font-size: 18px; font-family: Arial; color: #0884a5;
+        cursor: pointer;
+        }
+    .tabLogo{font-size: 22px; border: 3px  solid #0884a5;}
+    .dirPath {
+/*        padding: 2px; margin: 2px;
+        border-left: 2px  solid #0884a5;
+        border-right: 2px  solid #0884a5;
+*/        cursor: default
+        }
+    .logoTrait1, .logoTrait2, .Prismalide {fill: #D7620A }
+    .logoCentre, .logoForme {fill: #0884a5 }
+    .di2jActif { color: #D7620A }
+    .di2jInActif { color: #0884a5 }
+/*    #menudi2j { background-color: #D0D0D0; text-align: left;
+*/    #menudi2j { text-align: left; 
+/*        border-bottom: 5px  solid #0884a5;
+*/        background-color: lavender;
+        -moz-user-select: -moz-none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -o-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+    #menudi2j div{ min-width: 60%; }
+    .di2jHul{ text-align: left;
+        margin:0px;
+        list-style-type: none;
+        }
+    .di2jHli {display: inline; display: inline-block; padding: 3px; }
+    #menudi2j ul li { display: inline; padding: 3px; }
+    #menudi2j ul li div {display: inline; }
+    #menudi2j ul li a{ text-decoration: none; }
+    
+    </style>
+
+
+</head>
+<body>
+<div id="menudi2j" class="di2jNoMP">
+    <div >
+    <ul id="menudi2jUl" class="di2jNoMP" >
+        <li id="menudi2jLogo" ><a href=""><div id="di2jLogo">
+                <span id="di2jCom" style="color:#D7620A;font-family: IrisUPC; font-size: 64px;">logo</span>
+            </div></a></li>
+        <li id="menudi2jPath" class="textLogo" ><span class="dirPath" ></span></li>
+        <li id="menudi2jInfo" class="tabLogo" ><span  class="di2jActif" > Info </span></li>
+        <li id="menudi2jUse"  class="tabLogo" ><span class="di2jInActif"> Use </span></li>
+        <li id="menudi2jDemo" class="tabLogo" ><span class="di2jInActif"> Demo </span></li>
+    </ul>
+    </div>
+</div>
+
+<div id="di2j">
+<span id="di2jframes" class="di2jNoMP">
+<div id="di2jInfo" style="display: block;" class="di2jView di2jNoMP">
+    <div>
+        <div ><br /><span id="di2jRootDir"><span class="di2jLink"></span></span><span id="di2jDir"></span><iframe></iframe></div>
+        <span id="di2jPreAbout" >preabout<br /><span id="di2jAbout"></span><iframe></iframe>
+            <br /><img alt="Licence Creative Commons CC BY ND " style="border-width:0" src="http://licensebuttons.net/l/by-nd/3.0/88x31.png"></span>
+    </div>
+</div>
+<div id="di2jUse" class="di2jView">
+    <div><span></span><iframe id="myIframe"></iframe>
+    <br /><img alt="Licence Creative Commons CC BY ND " style="border-width:0" src="http://licensebuttons.net/l/by-nd/3.0/88x31.png"></div>
+</div>
+<div id="di2jDemo" class="di2jView">
+    <div>
+        <br /><span id="di2jExecDemo" >exec demo</span><br />
+        <span></span><iframe></iframe><span></span>
+        <br /><br /><img alt="Licence Creative Commons CC BY " style="border-width:0" src="http://licensebuttons.net/l/by/3.0/88x31.png">
+    </div>
+</div>
+</span>
+</div>
+
+
+
+
+</body>
+</html>

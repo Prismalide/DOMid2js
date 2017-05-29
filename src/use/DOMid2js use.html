@@ -1,0 +1,441 @@
+<!DOCTYPE HTML><!--compatible >IE8-->
+<!--suffixe pml = prismalide generic class -->
+<!--suffixe pmlu = prismalide use class -->
+<!--suffixe idx = prismalide index project class -->
+<!--abréviation ct = content -->
+    <html>
+    <head>
+<!--
+    change title and description
+    ================================-->
+<title>DOMid2js use</title>
+<meta name="description" content="Use DOM by id to javascript" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />       
+<meta name="author" content="prismalide.com" />
+<!--
+    change path from "project use.css"
+    ================================-->
+<link rel="stylesheet" type="text/css" title="priamalide use" href="../__dev__/templates/css/project use.css"/>
+<!--
+    script for this project use  
+    :=====================================================================================================-->
+<script type="text/javascript">
+    ;( function( ){ /// di2ju dans une fonction virtuelle
+    /*---\\\
+    wait--for--body---->
+        *///
+    var tmpTimer = setInterval( ( function ( ){ if ( document.getElementsByTagName( "BODY" )[ 0 ]){ initBody( ) } } ), 10 )
+    function initBody ( ) { clearInterval( tmpTimer );suiteBody( ) }
+    function suiteBody ( ){
+        changeSize( )
+        window.addEventListener( "resize", changeSize )
+        document.addEventListener( "resize", changeSize )
+        document.body.addEventListener( "resize", changeSize )
+        //document.getElementById( "impr" ).addEventListener( "animationiteration", function(){console.log("anim")})
+        //document.getElementById( "impr" ).addEventListener( "transitionrun", function(){console.log("trans")})
+        }
+    function changeSize ( ) {
+        //document.getElementById( "vHeader" ).style.height = document.getElementById( "headerpmlu" ).scrollHeight+"px"
+        document.getElementById( "vHeader" ).style.height = document.getElementById( "headerpmlu" ).offsetHeight+"px"
+        document.getElementById( "viewpmlu" ).style.minHeight = (document.getElementById( "bgpmlu" ).offsetHeight-document.getElementById( "headerpmlu" ).offsetHeight)+"px"
+        }
+    })()
+	function labelClickidx(that){
+        //document.getElementById( "ct"+ that.htmlFor ).click()//ok mais ok aussi avec checked
+        document.getElementById( "ct"+ that.htmlFor ).checked = true 
+        }
+    function optionsControl ( where, reset ) {
+        where = where.getElementsByTagName( 'input' )
+        var settings = ""
+        if(reset) { for ( var i = 0; i<where.length; i++){ if (where[i].checked) where[i].checked = false }; return }
+        else { settings= "?di2j=di2j popupout "; for ( var i = 0; i<where.length; i++){ if (where[i].checked) settings += where[i].title + " " } }
+        var tmp = document.getElementById( "iframeoption" ).src
+        document.getElementById( "iframeoption" ).src  = tmp.split("?")[0] + settings 
+        } 
+    function interfaceControl ( where ) {
+        whereBase = where.parentNode.parentNode
+        whereBase.getElementsByTagName( 'iframe' )[0].src = "samples/simple.di2j.html?di2j=di2j ui "
+        whereBase.removeChild( whereBase.firstElementChild )
+//console.log(        whereBase)//.firstChild.style.display = "block" 
+        whereBase.firstElementChild.style.display = "block" 
+        } 
+    function reloadIframe( where ){
+        where.nextElementSibling.nextElementSibling.contentDocument.location.reload(true)
+        }
+</script>
+<!--. 
+    end script
+    ================================-->
+<!--
+    style for this project use
+    :=====================================================================================================-->
+<style type="text/css" >
+/* suffixe _di2ju => DOMid2js use class */
+                /*\
+---------------options-------------
+                \*/
+
+.optionspmlu label{
+    background-color: #FFF4E5;
+    padding: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 2px;
+    border:  1px  solid #D7620A;
+    border-width:  0px 0px 1px 1px;
+    cursor: pointer;
+    text-align: center;
+    }
+.optionspmlu input:checked+label{
+    background-color: #5FF4E5;
+    }
+
+</style>
+<!--.
+    end style
+    ================================-->
+    </head>
+
+    <!--
+    body pmlu
+    ================================-->
+    <body class="noselectpml pmluNoDrag" >
+    <!-- background fixed -->
+    <div style="z-index:-1  ;" id="bgpmlu" ></div>
+    <!-- fullPagepmlu -->
+    <div id="fullPagepmlu" style="height: 100%;">
+
+    <!--
+    contents pmlu
+    ================================-->
+    <div id="previewpmlu" >
+    <div id="framespmlu">
+    <div id="vHeader" ></div>
+    <div id="viewpmlu" class="viewpmlu" >
+    <div id="content_" class="indexctpml" >
+    <br />
+<!--
+    contents for this project 
+    ======================================================================================================-->
+<!--use--><input id="ct_use" name="ct_" checked="checked" type="radio" />
+<!----><div>
+<!--
+    use
+    :===============================-->
+<!-- menu use -->
+<ul  class="inlinelistpml indexpml labelpmlu fade3labelspanpmlu">
+    <li>
+        <!-- use_info label -->
+        <input id="_use_info" name="_use" type="radio" />
+        <label onclick="labelClickidx(this)" for="_use_info">
+        <span>
+        info </span>
+        </label>
+    </li>
+    <li>
+        <!-- use_simple label -->
+        <input id="_use_simple" name="_use" checked="checked" type="radio" />
+        <label onclick="labelClickidx(this)" for="_use_simple">
+        <span>
+        simple </span>
+        </label>
+    </li>
+    <li>
+        <!-- use_options label -->
+        <input id="_use_options" name="_use" type="radio" />
+        <label onclick="labelClickidx(this)" for="_use_options">
+        <span>
+        options </span>
+        </label>
+    </li>
+    <li>
+        <!-- use_interface label -->
+        <input id="_use_interface" name="_use" type="radio" />
+        <label onclick="labelClickidx(this)" for="_use_interface">
+        <span>
+        interface </span>
+        </label>
+    </li>
+    <li>
+        <!-- use_paste label -->
+        <input id="_use_paste" name="_use" type="radio" />
+        <label class="samelinepml" onclick="labelClickidx(this)" for="_use_paste">
+        <span>
+        paste html </span>
+        </label>
+    </li>
+</ul>
+<!--
+    use contents
+    ================================-->
+<span>
+<div class="indexctpml">
+<!-- use/info ct -->
+<input id="ct_use_info" name="ct_use" type="radio" />
+<div>
+Info n'est pas encore écrit.
+</div>
+<!-- use/simple content -->
+<input id="ct_use_simple" name="ct_use" checked="checked" type="radio" />
+<div>
+    <p>Pour utiliser DOMid2js il faut insérer la ligne:<br />
+    <b>&lt;script src = "[path]/... /DOMid2js.js " &gt; &lt;/script &gt;</b><br />
+    dans le html concerné par la conversion. 
+    Dans ces exemples, il suffit de faire un 'click' sur le body (dégradé ou bandeau).<br />
+    La conversion est alors récupérable dans le clipboard (première balise style plus body). 
+    </p>
+
+    <b>Par défaut:</b><br />
+    Le code du body est régroupé par id mais n'est pas remis en forme à l'exception les lignes vides qui sont supprimées.<br /> 
+    Le premier style intégré (s'il existe) est codé et les littéraux sont encadrés de double quotes.<br />  
+    <img onclick="this.nextElementSibling.nextElementSibling.contentDocument.location.reload(true)" style="position: absolute;" height= "48px" src="../__dev__/templates/images/matt-icons_view-refresh.svg"/><br />
+    <iframe src="samples/simple.di2j.html" width="100%" height="100%"></iframe><br /><br />
+    <b>Option template et noStyle</b><br />
+    sans style et ` à la place de " pour les strings ou 
+    <label class="linkindexpmlu" onclick="labelClickidx(this)" for="_use_options">tester d'autres options</label><br />
+    Il existe deux façons de passer les options à DOMid2js.<br />
+    - Par le title de la balise script<br />
+    <b>&lt;script src = "[path]/... /DOMid2js.js " title = "di2j template nostyle&gt; &lt;/script &gt;</b><br />
+    - Ou en paramètre par l'URL d'appel du fichier html<br />
+    <b>[pathHtml].../myHtml.html?di2J=di2j template nostyle</b><br />
+    <br /><img onclick="this.nextElementSibling.nextElementSibling.contentDocument.location.reload(true)" style="position: absolute;" height= "48px" src="../__dev__/templates/images/matt-icons_view-refresh.svg"/><br />
+    <iframe src="samples/simple.di2j.html?di2j=di2j template noStyle " width="100%" height="100%"></iframe><br />
+</div>
+<!-- use/options content -->
+<input id="ct_use_options" name="ct_use" type="radio" />
+<div>
+    <div>
+    <br />
+    <div>
+        <p>Choisir les options pour tester</p>
+        <div id="choisdi2ju" class="hideinputspml optionspmlu">
+        <table class="optionspmlu" >
+            <tr><td>
+                <input id="templateoptions" title="template" type="checkbox" />
+                <label for="templateoptions">
+                <b>template</b>, pas de " mais ` </label><br />
+            </td><td>
+                <input id="templatestyleoptions" title="templatestyle" type="checkbox" />
+                <label for="templatestyleoptions">
+                <b>templatestyle</b>, pour style, pas de " mais `</label>
+            </td>
+            </tr><tr><td>
+                <input id="nolinebreakoptions" title="nolinebreak" type="checkbox" />
+                <label for="nolinebreakoptions">
+                <b>nolinebreak</b>, saut de ligne en fin de strings</label>
+            </td><td>
+                <input id="nostyleoptions" title="nostyle" type="checkbox" />
+                <label for="nostyleoptions">
+                <b>nostyle</b>, ne pas inclure le style[0]</label>
+            </td>
+            </tr><tr><td>
+                <input id="rootoptions" title="root:uldi2j" type="checkbox" />
+                <label for="rootoptions">
+                <b>root:uldi2j</b> id de départ </label><br />
+            </td><td>
+            </td>
+            </tr><tr style="text-align: center;"><td>
+                <br />
+                <input id="voiroptionsdi2ju" title="" type="checkbox" />
+                <label onclick="optionsControl( this.parentNode.parentNode.parentNode )" style="border-radius: 10px; background-color: #AFE485;" for="voiroptionsdi2ju">
+                <b>
+                voir</b></label>
+            </td><td>
+                <br />
+                <input id="resetoptionsdi2ju" title="" type="button" />
+                <label onclick="optionsControl( this.parentNode.parentNode.parentNode, true )" style="border-radius: 10px; background-color: #AFE485;" for="resetoptionsdi2ju">
+                <b>
+                reset</b></label>
+            </td>
+            </tr>
+        </table>
+        </div>
+        <br /><img onclick="this.nextElementSibling.nextElementSibling.contentDocument.location.reload(true)" style="position: absolute;" src="../__dev__/templates/images/matt-icons_view-refresh.svg" height="48px"/><br />
+        <iframe id="iframeoption" src="samples/options.di2j.html?di2j=di2j" style="width: 100%; height: 100%;"></iframe><br /><br />
+       </div>
+        <br />
+    </div>
+</div>
+<!-- use/interface content -->
+<input id="ct_use_interface" name="ct_use" type="radio" />
+<div>
+<div>
+    Pour tester l'interface appuyez sur:<br />
+    <label onclick="interfaceControl(this)" style="border-radius: 10px; background-color: #AFE485;" >
+    <b>
+    Activez user interface</b></label>
+</div>
+<div style="display:  none;">
+    Puis clicker sur l'icone
+    <div style="border-radius: 10px; border:  1px  solid #88888888; display: inline-block; width: 30px; padding: 2px 6px 2px 2px;">
+        <div style="padding-left: 2px; width: 100%; height: 1px; color: #FFFFFF; text-align: center; font-size: 18px; font-family: Times New Roman; position: relative; top: 0px;">
+            <b>did</b></div>
+        <div style="margin: 2px;width: 100%; height: 5px; background-color: royalblue;"></div>
+        <div style="margin: 2px;width: 100%; height: 5px; background-color: blueviolet;"></div>
+        <div style="margin: 2px;width: 100%; height: 5px; background-color: violet;"></div>
+    </div>
+    en haut de la fenêtre.
+    <br />
+    Options UI à DOMid2js:<br />
+    - Par le title de la balise script<br />
+    <b>&lt;script src = "[path]/... /DOMid2js.js " title = "di2j ui &gt; &lt;/script &gt;</b><br />
+    - Ou en paramètre par l'URL d'appel du fichier html<br />
+    <b>[pathHtml].../myHtml.html?di2J=di2j ui </b><br />
+    <iframe src="" width="100%" height="100%"></iframe><br />
+</div>
+</div>
+<!-- use/paste html content -->
+<input id="ct_use_paste" name="ct_use" type="radio" />
+<div>
+<div>
+</div>
+<div style="display:  none;">
+    <b>[pathHtml].../myHtml.html?di2J=di2j ui </b><br />
+    <iframe src="" width="100%" height="100%"></iframe><br />
+</div>
+</div>
+</div>
+</span>
+<!--end use contents-->
+<!--.
+    end use 
+    ================================-->
+<!----></div>
+<!----><input id="ct_dev" name="ct_"  type="radio" />
+<!--
+    dev
+    :===============================-->
+<!----><div>
+Dev n'est pas encore écrit.<!--TODO:-->
+
+<!--. 
+    end dev
+    ================================-->
+<!----></div>
+<!----><input id="ct_test" name="ct_" type="radio" />
+<!--
+    test
+    :===============================-->
+<!----><div>
+Test n'est pas encore écrit.<!--TODO:-->
+
+<!--.
+end test
+    ================================-->
+<!----></div>
+<!--
+    end content
+    ================================-->
+<!--
+    no change after this excepted files path and project name
+    :=====================================================================================================-->
+    </div><!--end content_-->
+    </div><!--end viewpmlu-->
+    </div><!--end framespmlu-->
+    </div><!--end previewpmlu-->
+    <!--
+    end contents DOMid2js
+    ================================-->
+    <!--
+    header DOMid2js
+    ================================-->
+    <div id="headerpmlu" class="noMPpmlu" >
+    <!-- premenu -->
+    <span style="display: inline-block; ">
+    <span class="premenu samelinepml" >
+        <a class="" href="http://prismalide.com">
+        <img src="../__dev__/external/prismalide/logo/logo prismalide.svg" alt="Prismalide" height="75px" /></a>
+        <a class="" href="https://github.com/Prismalide?tab=repositories">
+        <img height= "32px" alt="GitHub Prismalide" style="border-width:0; margin-bottom: 3px; margin-left: -24px" src="../__dev__/gitHub/logo/Mark/GitHub-Mark.svg" /></a>
+    </span>
+    <!-- project -->
+    <span style="display:inline-block; height: 100%; "  class="samelinepml">
+        <a style="" class="" href="https://github.com/Prismalide/DOMid2js">
+        <span  style="">
+        <div style="font-size: 52px;color:#0884a5;font-size: 24px;">
+        <span style="position: absolute;padding:0px 2px 0px 2px;display: inline; top: 0px; border-radius: 0px 0px 20px 20px; border-width: 0px 5px 3px 5px; border-style: solid; border-color: #F8F8FE; background-color: #F8F8FE; ">
+<span style="position:absolute;left: -28px ; background-color:  #F8F8FE; ">
+<div style="  background-color: white ;border-color:  #EAEAFB; border-width : 22px 0px 0px 0px;border-radius: 0px 30px 0px 0px ; border-style: solid; min-width:24px; height:0px  ">
+</div></span>
+DOMid2js
+<span style="position:absolute; right: -33px; background-color:  #F8F8FE; ">
+<div style="  background-color: #EAEAFB ;border-color:  #EAEAFB; border-width : 0px 5px 0px 0px;border-radius: 30px 0px 0px 0px ; border-style: solid; min-width:24px; height:22px  ">
+</div></span>
+        </span>
+        <span style="visibility: hidden; font-size: 22px;">
+<!--
+    change project name
+    ================================-->
+DOMid2js
+        </span>
+        </div>
+        </span>
+        </a>
+    </span>
+    </span>
+<!--
+    menu header
+    ================================-->
+    <span class="menu1 noMPpmlu samelinepml" >
+        <ul class="menulist indexpml buttonpmlu fade3lipmlu" >
+            <li>
+                <!-- use label -->
+                <input id="_use" name="_menu" checked="checked" type="radio" />
+                <label onclick="labelClickidx(this)"  for="_use">
+                <span>
+                <img width ="1px" height= "52px" src="../__dev__/template files/empty space.svg"/>
+                <img style="position: absolute; height: 48px;" src="../__dev__/templates/images/Minduka_A_gray_laptop.svg"/>
+                <span style="padding-left: 43px;">
+                use
+                </span>
+                </span>
+                </label>
+            </li>
+            <li>
+                <!-- dev label -->
+                <input id="_dev" name="_menu" type="radio" />
+                <label onclick="labelClickidx(this)"  for="_dev">
+                <span>
+                <img style="position: absolute; height: 48px;" src="../__dev__/templates/images/edit-find.svg"/>
+                <span style="padding-left: 43px;">
+                dev
+                </span>
+                </span>
+                </label>
+            </li>
+            <li>
+                <!-- test label -->
+                <input id="_test" name="_menu" type="radio" />
+                <label onclick="labelClickidx(this)"  for="_test">
+                <span>
+                <img style="position: absolute;" height= "48px" src="../__dev__/templates/images/david-benjamin-Hammer.svg"/>
+                <span style="padding-left: 43px;">
+                test
+                </span>
+                </span>
+                </label>
+            </li>
+        </ul>
+    </span>
+    <span class="menu1 noMPpmlu samelinepml" >
+        <ul class="menulist" >
+            <li id="impr" class="fade3pmlu"><span ><a id="logoImprim" class="logo" href="javascript:window.print()">
+                <img alt="Imprimer" height= "48px" src="../__dev__/templates/images/printer.svg"/></a></span></li>
+            <li class="fade3pmlu"><span ><a id="logoLicense" class="logo" href="">
+    <!--        <img alt="CC0 " height="24px" style="border-width:0" src="http:/licensebuttons.net/l/zero/1.0/88x31.png">
+            <img alt="CC BY " height="24px" style="border-width:0" src="http://licensebuttons.net/l/by/3.0/88x31.png">
+    -->         <img alt="CC BY ND " height="24px" style="border-width:0" src="http://licensebuttons.net/l/by-nd/3.0/88x31.png" />
+                </a></span>
+            </li>
+        </ul>
+    </span>
+    <!-- postmenu -->
+    <span class="postmenu">
+    </span>
+    </div>
+    </div><!--end fullPagepmlu-->
+    <!---->
+    <!-- end body DOMid2js use -->
+    <!---->
+    </body>
+</html>

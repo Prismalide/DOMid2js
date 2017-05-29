@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DOMid2js demo defaut</title>
+	<meta name="description" content="Use defaut DOM by id to javascript" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="prismalide.com" />
+
+    <meta name="robots" content="noindex" />
+
+    <script src="../../DOMid2js.js" > </script>
+
+
+    <style type="text/css">
+/* prefix/suffixe di2j => DOMid2js demo variables */
+    .di2jNoMP {margin: 0px !important; padding: 0px  !important }
+    .tabLogo, #menudi2j, #di2jInfo {
+        -moz-border-top-radius: 10px; -webkit-border-top-radius: 10px;
+        border-top-left-radius: 10px; border-top-right-radius: 12px;
+        }
+    .textLogo, .tabLogo, #menudi2jLogo {
+        font-size: 18px; font-family: Arial; color: #0884a5;
+        cursor: pointer;
+        }
+    .tabLogo{font-size: 22px; border: 3px  solid #0884a5;}
+    .di2jActif { color: #D7620A }
+    .di2jInActif { color: #0884a5 }
+    #menudi2j { text-align: left; 
+        background-color: lavender;
+        }
+    #menudi2j div{ min-width: 60%; }
+    #menudi2j ul li { display: inline; padding: 3px; }
+    #menudi2j ul li div {display: inline; }
+    #menudi2j ul li a{ text-decoration: none; }
+    </style>
+
+
+</head>
+<body>
+<div id="menudi2j" class="di2jNoMP">
+    <div >
+    <ul id="uldi2j" class="di2jNoMP" >
+        <li id="menudi2jLogo" ><a href=""><div id="di2jLogo">
+                <span id="di2jCom" style="color:#D7620A;font-family: IrisUPC; font-size: 64px;">logo</span>
+            </div></a></li>
+        <li id="menudi2jPath" class="textLogo" ><span class="dirPath" ></span></li>
+        <li id="menudi2jInfo" class="tabLogo" ><span  class="di2jActif" > Info </span></li>
+        <li id="menudi2jUse"  class="tabLogo" ><span class="di2jInActif"> Use </span></li>
+        <li id="menudi2jDemo" class="tabLogo" ><span class="di2jInActif"> Demo </span></li>
+    </ul>
+    </div>
+</div>
+
+</body>
+</html>

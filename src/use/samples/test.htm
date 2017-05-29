@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="on test" />
+
+	<title>Nouveau fichier 2</title>
+</head>
+
+
+<style type="text/css">
+<!--
+.menufinfleche
+{
+ position:absolute;
+ top:-13px;
+ left:-16px ;
+ width: 0;
+ height: 0;
+ margin-left: 0px;
+ border: 13px solid blue;
+ border-top-color: transparent;
+ border-right-color: transparent;
+ border-bottom-color: transparent;   
+}
+.menufin2fleche
+{
+ position:absolute;
+ top:0px;
+ width: 0;
+ height: 0;
+ margin-left: 0px;
+ border: 16px solid red;
+ border-top-color: transparent;
+ border-right-color: transparent;
+ border-bottom-color: transparent;   
+}
+	
+-->
+</style>
+
+
+
+<body>
+
+<div style=" z-index: 500; top:0px; position: fixed; text-align: center; width: 100%; " >
+<div style = "display: inline-block; width: 100%;" >
+<div onclick="this.parentNode.guiClick( this )" style="border-radius: 10px; top: 0px; display: inline-block; background-color: #F7E8D7;">
+    <div style="width: 30px; padding: 2px 6px 2px 2px;">
+        <div style="padding-left: 2px; width: 100%; height: 1px; color: #FFFFFF; text-align: center; font-size: 22px;; font-family: times new roman; position: relative; top: 0px;">
+            <b>js</b></div>
+        <div style="margin: 2px;width: 100%; height: 5px; background-color: royalblue;"></div>
+        <div style="margin: 2px;width: 100%; height: 5px; background-color: blueviolet;"></div>
+        <div style="margin: 2px;width: 100%; height: 5px; background-color: violet;"></div>
+    </div>
+</div><br />
+<div style="padding: 8px; border-radius: 10px; display: inline-block; background-color: #F7E4D2;">
+    <div style="display: block; ">
+        <span onclick="this.parentNode.parentNode.parentNode.parentNode.guiClick( this )" style="border: 1px solid #88888888; border-radius: 8px; display: inline-block; background-color: #F7E8D7;">
+            <div style="width: 15px; padding: 0px 5px 1px 1px;">
+                <div style="padding-left: 2px; width: 100%; height: 1px; color: #FFFFFF; text-align: center; font-size: 14px;; font-family: times new roman; position: relative; top: 0px;">
+                    <b>&#10134;</b>
+                </div>
+                <div style="margin: 2px; width: 100%; height: 3px; background-color: royalblue;"></div>
+                <div style="margin: 2px; width: 100%; height: 3px; background-color: blueviolet;"></div>
+                <div style="margin: 2px; width: 100%; height: 3px; background-color: violet;"></div>
+            </div>
+        </span>
+        <div style="display: inline-block; padding-bottom: 5px;">
+        <span onclick="this.parentNode.parentNode.parentNode.parentNode.guiClick( this )" style="border: 1px solid #88888888; border-radius: 8px; display: inline-block; background-color: #F7E8D7;">
+            <div style="width: 15px; padding: 0px 5px 1px 1px;">
+                <div style="padding-left: 2px; width: 100%; height: 1px; color: #FFFFFF; text-align: center; font-size: 14px;; font-family: times new roman; position: relative; top: 0px;">
+                    <b>&#10060;</b>
+                </div>
+                <div style="margin: 2px; width: 100%; height: 3px; background-color: royalblue;"></div>
+                <div style="margin: 2px; width: 100%; height: 3px; background-color: blueviolet;"></div>
+                <div style="margin: 2px; width: 100%; height: 3px; background-color: violet;"></div>
+            </div>
+        </span>
+        </div>
+    </div>
+
+
+
+        <p>Choisir les options</p>
+        <div id="choisdi2ju" style="text-align: left;" class="hideinputspml">
+                <br /><input id="nostrictoptions" title="nostrict" type="checkbox" />
+                <label for="nostrictoptions">
+                <b>nostrict</b>, pas de use strict</label>
+                <br /><input id="templatestyleoptions" title="templatestyle" type="checkbox" />
+                <label for="templatestyleoptions">
+                <b>templatestyle</b>, pour style, pas de " mais `</label>
+                <br /><input id="nolinebreakoptions" title="nolinebreak" type="checkbox" />
+                <label for="nolinebreakoptions">
+                <b>nolinebreak</b>, saut de ligne en fin de strings</label>
+                <br /><input id="nostyleoptions" title="nostyle" type="checkbox" />
+                <label for="nostyleoptions">
+                <b>nostyle</b>, ne pas inclure le style[0]</label>
+                <br /><input id="templateoptions" title="template" type="checkbox" />
+                <label for="templateoptions">
+                <b>template</b>, pas de " mais ` </label>
+                <br /><input id="rootoptions" title="root:uldi2j" type="checkbox" />
+                <label for="rootoptions">
+                <b>root:uldi2j</b> id de départ <select > </select> </label><br />
+                <br />
+        </div>
+                <br /><input id="voiroptionsdi2ju" title="" type="checkbox" />
+                <label onclick="optionsControl( this.parentNode.parentNode.parentNode )" style="border-radius: 10px; background-color: #AFE485;" for="voiroptionsdi2ju">
+                <b>
+                voir</b></label>
+                <br />
+                <br /><input id="resetoptionsdi2ju" title="" type="button" />
+                <label onclick="optionsControl( this.parentNode.parentNode.parentNode, true )" style="border-radius: 10px; background-color: #AFE485;" for="resetoptionsdi2ju">
+                <b>
+                copier</b></label>
+       </div>
+        <br />
+           <span style="padding: 0px 8px 0px 10px; margin : -3px 0px 0px 0px; border: #AE8964; border-bottom-style: solid; border-radius: 30px; height: 22px; display: inline-block; background-color: #FFFFFF;"> 
+               <div style="padding: 0px 10px 0px 10px; margin : 0px 0px 0px 0px; width: 12px; height: 22px; border-radius: 50px; display: inline-block; background-color: #BBBC82; border: 1px solid #666666;">
+                   <div style="padding: 3px 3px 3px 2px; margin: 2px 2px 2px -2px; width: 12px; height: 12px; border-radius: 30px; background-color: #000000;">
+                       <div style="padding: 4px 0px 0px 0px; margin: 2px 4px 4px 5px; border-radius: 30px; height: 2px;  background-color: #FFFFFF;"></div>
+                   </div>
+               </div>
+           </span>
+    </div>
+</div>
+</div></div>
+
+<select 
+            id="standard" style="WIDTH: 120px; BACKGROUND-COLOR: lavender" 
+            onclick="listeObjet('N_E_W',this.value)" name="standard">
+            <option value="window" selected>window</option>
+            <option value="document">document</option> 
+              <option 
+              value="tmp=document.getElementsByTagName('body')[0];tmp">&lt;body&gt;</option> 
+              <option 
+              value="tmp=document.getElementsByTagName('html')[0];tmp">&lt;html&gt;</option> 
+              <option 
+              value="tmp=document.getElementsByTagName('head')[0];tmp">&lt;head&gt;</option> 
+
+</select>
+
+
+</body>
+</html>
